@@ -68,6 +68,10 @@ html, body {
 }
 
 .text-wrapper {
+    display: block;
+}
+
+.text-wrapper.image-text {
     flex-shrink: 0;
     width: calc(50% - 40px);
     margin-left: 40px;
@@ -102,8 +106,9 @@ html, body {
 
 .button-wrapper {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     margin-bottom: 20px;
 }
 
@@ -165,7 +170,7 @@ html, body {
         position: static;
     }
 
-    .text-wrapper {
+    .text-wrapper.image-text {
         margin: 0;
         margin-top: 40px;
         width: 100%;
