@@ -44,18 +44,31 @@ $(document).ready(function(){
     function enableAddTemplate() {
         $('.text.border-highlight').hover(function(){
             var textNode = $(this);
+            // add
             var addTemplateButton = document.createElement('i');
-            addTemplateButton.className = "icon-plus add-template-button";
+            addTemplateButton.className = "icon-plus";
             addTemplateButton.style.display = 'none';
             textNode.prepend(addTemplateButton);
-            $('.icon-plus.add-template-button').fadeIn();
-            // $(this).prepend('<i class="icon-plus add-template-button"></i>');
-            $('.icon-plus.add-template-button').click(function(){
+            $('.icon-plus').fadeIn();
+            $('.icon-plus').click(function(){
                 var newTextNode = textNode.clone().text('');
                 newTextNode.insertAfter(textNode);
+                $('.text').unbind('mouseenter mouseleave');
+                enableAddTemplate();
+            });
+
+            // delete
+            var deleteTemplateButton = document.createElement('i');
+            deleteTemplateButton.className = "icon-trash-can";
+            deleteTemplateButton.style.display = 'none';
+            textNode.append(deleteTemplateButton);
+            $('.icon-trash-can').fadeIn();
+            $('.icon-trash-can').click(function(){
+                textNode.remove();
             });
         }, function(){
             $(this).find('.icon-plus').remove();
+            $(this).find('.icon-trash-can').remove();
         });
     }
     
