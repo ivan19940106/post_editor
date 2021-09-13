@@ -78,8 +78,11 @@ html, body {
 }
 
 .text {
+    display: list-item;
+    list-style-type: none;
+    margin-top: 10px;
     padding: 5px 10px;
-    min-height: 24px;
+    min-height: 44px;
     font-size: 16px;
     line-height: 32px;
     letter-spacing: 2px;
@@ -98,10 +101,6 @@ html, body {
     outline: none;
     border: 1px solid #2F6690;
     border-radius: 5px;
-}
-
-.text + .text {
-    margin-top: 10px;
 }
 
 .button-wrapper {
@@ -127,6 +126,7 @@ html, body {
 /* template start */
 
 .title {
+    margin-top: 0;
     font-size: 36px;
     line-height: 72px;
 }
@@ -145,6 +145,40 @@ html, body {
     width: 5px;
     height: 100%;
     background-color: #CCDBDC;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    list-style-type: none;
+}
+
+.list:focus-visible {
+    outline: none;
+}
+
+.list li {
+    position: relative;
+    padding-left: 40px;
+}
+
+.list li::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 10px;
+    height: 10px;
+    background-color: #CCDBDC;
+    border-radius: 50%;
+}
+
+.list li:focus-visible {
+    outline: none;
+    border: 1px solid #2F6690;
+    border-radius: 5px;
 }
 
 /* template end */
@@ -191,6 +225,17 @@ html, body {
 
     .quote {
         padding: 10px 20px;
+    }
+
+    .list li {
+    padding-left: 30px;
+    }
+
+    .list li::before {
+        top: 17px;
+        left: 12px;
+        width: 8px;
+        height: 8px;
     }
 
     /* template end */
